@@ -1,0 +1,16 @@
+node_modules/
+dist/
+.localhosting/
+*.log
+*.tmp
+.DS_Store
+coverage/
+*.SPEC*.md
+*SPEC*.md
+*PROMPT*.md
+DRAFT*.md
+ULTIMATE-*.md
+V2-*.md
+.env
+.env.*
+!.env.example

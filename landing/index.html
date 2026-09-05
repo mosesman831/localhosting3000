@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>localhosting:3000 - undo for localhost</title>
+    <meta
+      name="description"
+      content="Automatic local snapshots when your localhost app is actually good. One-click restore. No cloud. No port killer."
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="marquee" aria-label="AUTO SNAPSHOT ON GOOD BUILD • NOT A PORT KILLER • NOT VERCEL ROLLBACK • UNDO FOR LOCALHOST • GIT OPTIONAL • AGENT OPTIONAL •">
+      <div class="marquee-track">
+        <span>AUTO SNAPSHOT ON GOOD BUILD • NOT A PORT KILLER • NOT VERCEL ROLLBACK • UNDO FOR LOCALHOST • GIT OPTIONAL • AGENT OPTIONAL • </span>
+        <span>AUTO SNAPSHOT ON GOOD BUILD • NOT A PORT KILLER • NOT VERCEL ROLLBACK • UNDO FOR LOCALHOST • GIT OPTIONAL • AGENT OPTIONAL • </span>
+      </div>
+    </div>
+
+    <header class="hero">
+      <div class="hero-inner">
+        <p class="badges">
+          <span class="sticker" aria-hidden="true">🧪</span>
+          <span class="badge">no tests were harmed</span>
+          <span class="badge badge-real">npm test exists actually</span>
+          <span class="bob" aria-hidden="true">🧯</span>
+        </p>
+        <h1>localhosting:3000</h1>
+        <p class="subhead">
+          The undo button for localhost. Not for production. Not for git. For the mess your agent just made on :3000.
+        </p>
+        <div class="cta-row">
+          <code id="install-cmd">npx localhosting watch</code>
+          <button type="button" id="copy-cta" class="cta">Copy</button>
+        </div>
+        <p class="secondary">
+          Free, MIT, local-only. The dashboard is on :3001 because :3000 is already taken by your app.
+        </p>
+        <p class="emoji-row" aria-hidden="true">💾 🪄 🧃 🪩 🧷 ✨ 🛠️</p>
+        <pre class="term" id="term" aria-label="restore demo"></pre>
+      </div>
+    </header>
+
+    <section class="how">
+      <h2><span aria-hidden="true">🧠</span> How it works</h2>
+      <ol>
+        <li>Leave <code>localhosting watch</code> running.</li>
+        <li>When localhost is actually good, we snapshot automatically.</li>
+        <li>When the agent bricks it, restore one click. We snapshot NOW first so you can undo the undo.</li>
+      </ol>
+    </section>
+
+    <section class="cli">
+      <h2><span aria-hidden="true">📦</span> CLI install</h2>
+      <ul>
+        <li><code>npx localhosting watch</code></li>
+        <li><code>npx localhosting list</code></li>
+        <li><code>npx localhosting restore &lt;id&gt;</code></li>
+      </ul>
+      <p>Requires Node 20+. No account.</p>
+    </section>
+
+    <section class="shot">
+      <h2><span aria-hidden="true">🔥</span> Dashboard</h2>
+      <figure>
+        <img
+          src="./dashboard-preview.png"
+          alt="localhosting dashboard listing snapshots with restore buttons"
+          width="1280"
+          height="800"
+        />
+        <figcaption>The panic surface. Deliberately not vibe soup.</figcaption>
+      </figure>
+    </section>
+
+    <section class="not">
+      <h2><span aria-hidden="true">⚠️</span> What this is not</h2>
+      <ul>
+        <li>Not Vercel/Netlify rollback.</li>
+        <li>Not a port dashboard. We do not kill processes. We do not scan your ports.</li>
+        <li>Not cloud backup.</li>
+      </ul>
+    </section>
+
+    <section class="faq" id="faq">
+      <h2><span aria-hidden="true">🦞</span> FAQ</h2>
+      <dl>
+        <dt>Why not just use git?</dt>
+        <dd>You would. You did not. The agent did not either. This watches the running app, not your conscience.</dd>
+        <dt>Is this a production rollback tool?</dt>
+        <dd>No. Production already has Netlify and Vercel. This is for the three hours before you deploy, when :3000 is on fire and there is no commit.</dd>
+        <dt>Will this replace Time Machine / uhoh / local history?</dt>
+        <dd>No. Those snapshot writes. We snapshot good running states. Different trigger, smaller history, on purpose.</dd>
+        <dt>Do you upload my code?</dt>
+        <dd>No. v1 has no accounts and no telemetry. Snapshots live in .localhosting/ on this disk. If the disk dies, they die.</dd>
+        <dt>Can I restore without restarting the dev server?</dt>
+        <dd>We write files. We do not kill processes. Restart the server. If a file was locked, restore reports partial and you retry.</dd>
+        <dt>Where is the dashboard?</dt>
+        <dd>:3001 by default, never :3000. :3000 is the patient, not the doctor.</dd>
+      </dl>
+    </section>
+
+    <footer>
+      <p>MIT. Copyright 2026 localhosting:3000.</p>
+      <p><span aria-hidden="true">✅</span> Nothing leaves this machine.</p>
+    </footer>
+    <script src="./main.js"></script>
+  </body>
+</html>

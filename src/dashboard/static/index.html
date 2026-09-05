@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>localhosting:3000</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to snapshots</a>
+    <header class="top">
+      <div class="brand">
+        <p class="product">localhosting:3000</p>
+        <p class="tag">Panic surface. Local snapshots only.</p>
+      </div>
+      <div class="meta" id="header-meta">
+        <span class="badge" id="detector-badge" data-state="STOPPED">STOPPED</span>
+        <p class="probe" id="probe-line">probe: unknown</p>
+      </div>
+    </header>
+
+    <div id="banners"></div>
+
+    <div class="actions">
+      <button type="button" class="btn secondary" id="btn-snapshot" style="min-height: 44px">
+        Snapshot now
+      </button>
+    </div>
+
+    <main id="main">
+      <div id="loading" class="skeletons" hidden>
+        <div class="skel"></div>
+        <div class="skel"></div>
+        <div class="skel"></div>
+      </div>
+      <p id="error" class="error" hidden></p>
+      <button type="button" class="btn secondary" id="btn-retry" hidden style="min-height: 44px">Retry</button>
+
+      <section id="empty" hidden>
+        <h1>No snapshots yet</h1>
+        <p>
+          Leave localhosting watch running while your app is on localhost.
+          The first snapshot is taken after a good state: files settled, loopback probe succeeding, and no known error overlay.
+          This page does not scan ports and will not start your dev server.
+        </p>
+        <ul id="empty-check" class="checks">
+          <li id="chk-watch">Watch process: not running</li>
+          <li id="chk-probe">Probe: unknown</li>
+          <li id="chk-overlay">Overlay: unknown</li>
+          <li id="chk-detector">Detector state: STOPPED</li>
+        </ul>
+      </section>
+
+      <div class="table-wrap">
+        <table id="snap-table" hidden>
+          <thead>
+            <tr>
+              <th>Pin</th>
+              <th>Age</th>
+              <th>When</th>
+              <th>Id</th>
+              <th>Trigger</th>
+              <th>Confidence</th>
+              <th>Files</th>
+              <th>Size</th>
+              <th>Delta</th>
+              <th>Restore</th>
+            </tr>
+          </thead>
+          <tbody id="snap-body"></tbody>
+        </table>
+      </div>
+    </main>
+
+    <footer>
+      Nothing leaves this machine. We do not kill processes.
+    </footer>
+
+    <dialog id="confirm" aria-labelledby="confirm-title">
+      <form method="dialog" id="confirm-form">
+        <h2 id="confirm-title">Restore snapshot?</h2>
+        <div id="confirm-body" class="confirm-body"></div>
+        <p class="kept-copy">Files on disk not in this snapshot: they will be kept.</p>
+        <div class="dialog-actions">
+          <button type="submit" value="cancel" class="btn secondary" id="btn-cancel" style="min-height: 44px" autofocus>
+            Cancel
+          </button>
+          <button type="button" class="btn primary" id="btn-restore" style="min-height: 44px">Restore</button>
+        </div>
+        <p id="restore-progress" hidden>Restoring…</p>
+        <div id="restore-result" hidden></div>
+      </form>
+    </dialog>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
